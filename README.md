@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bcaa3b4a-55ec-4b85-acf1-cba9cd501fe2/deploy-status)](https://app.netlify.com/projects/naalfbc/deploys)
+
 # Science Workshop Website 🧬
 
 A modern, responsive website for Nevzat Ayaz Anadolu Lisesi Science Workshop featuring 8 specialized scientific committees.
