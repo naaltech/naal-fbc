@@ -70,7 +70,7 @@ export default function LocationSection() {
                   <h4 className="font-semibold mb-3">Ulaşım</h4>
                   <ul className="text-muted-foreground space-y-1">
                     <li>• Metro: M5 Hattı - Çarşı Durağı</li>
-                    <li>Metrobüs hattının Altunizade durağından veya M8 metro hattının Dudullu durağından M5 metro hattına aktarma yapılabilmektedir.</li>
+                    <li>Metrobüs hattının Altunizade durağından ve M8 metro hattının Dudullu durağından M5 metro hattına aktarma yapılabilmektedir.</li>
                     <li>• Otobüs: 11P, 131T, 131YS, 320, 522, 14YE, 139A, 11ÜS (Ümraniye Çarşı Metro Durağı)</li>
                     <li>• Otobüs: 11D, 11H, 14DK, 15TY (Ümraniye Telekom Durağı)</li>
                     <li>• Otobüs: 10, 10G, 11K, 11ÇB, 13H, 14K, 20, 20K (Ümraniye Devlet Hastanesi Durağı)</li>                  
