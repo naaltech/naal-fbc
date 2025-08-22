@@ -20,6 +20,9 @@ export default function Header() {
             <a href="/" className="text-foreground hover:text-primary transition-colors">
               Ana Sayfa
             </a>
+            <a href="/komiteler" className="text-foreground hover:text-primary transition-colors">
+              Komiteler
+            </a>
             <a href="/#hakkinda" className="text-foreground hover:text-primary transition-colors">
               Hakkında
             </a>
@@ -28,9 +31,6 @@ export default function Header() {
             </a>
             <a href="/#ekip" className="text-foreground hover:text-primary transition-colors">
               Ekibimiz
-            </a>
-            <a href="/komiteler" className="text-foreground hover:text-primary transition-colors">
-              Komiteler
             </a>
             <a href="/#iletisim" className="text-foreground hover:text-primary transition-colors">
               İletişim
@@ -47,22 +47,22 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 border-t">
-              <a href="#anasayfa" className="block px-3 py-2 text-foreground hover:text-primary transition-colors">
+              <a href="/" className="block px-3 py-2 text-foreground hover:text-primary transition-colors">
                 Ana Sayfa
-              </a>
-              <a href="#hakkinda" className="block px-3 py-2 text-foreground hover:text-primary transition-colors">
-                Hakkında
-              </a>
-              <a href="#takvim" className="block px-3 py-2 text-foreground hover:text-primary transition-colors">
-                Program
-              </a>
-              <a href="#ekip" className="block px-3 py-2 text-foreground hover:text-primary transition-colors">
-                Ekibimiz
               </a>
               <a href="/komiteler" className="block px-3 py-2 text-foreground hover:text-primary transition-colors">
                 Komiteler
               </a>
-              <a href="#iletisim" className="block px-3 py-2 text-foreground hover:text-primary transition-colors">
+              <a href="/#hakkinda" className="block px-3 py-2 text-foreground hover:text-primary transition-colors">
+                Hakkında
+              </a>
+              <a href="/#takvim" className="block px-3 py-2 text-foreground hover:text-primary transition-colors">
+                Program
+              </a>
+              <a href="/#ekip" className="block px-3 py-2 text-foreground hover:text-primary transition-colors">
+                Ekibimiz
+              </a>
+              <a href="/#iletisim" className="block px-3 py-2 text-foreground hover:text-primary transition-colors">
                 İletişim
               </a>
             </div>

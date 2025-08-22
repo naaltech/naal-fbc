@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Calendar, Users, UserCheck } from "lucide-react"
+import { Calendar, Users, Component } from "lucide-react"
 
 export default function HeroSection() {
   return (
@@ -13,23 +13,23 @@ export default function HeroSection() {
             keşfetmek için bir araya geliyor.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 max-w-3xl mx-auto">
-            <Card className="p-4 text-center">
-              <Calendar className="h-6 w-6 text-primary mx-auto mb-3" />
-              <h3 className="font-serif font-semibold text-base mb-1">Tarih</h3>
-              <p className="text-muted-foreground text-sm">11-12 Mayıs 2024</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 mb-12 max-w-2xl mx-auto">
+            <Card className="p-2 sm:p-3 text-center">
+              <Calendar className="h-5 w-5 sm:h-6 sm:w-6 text-primary mx-auto mb-0" />
+              <h3 className="font-serif font-semibold text-sm sm:text-base mb-0">Tarih</h3>
+              <p className="text-muted-foreground text-xs sm:text-sm">11-12 Mayıs 2024</p>
             </Card>
 
-            <Card className="p-4 text-center">
-              <Users className="h-6 w-6 text-primary mx-auto mb-3" />
-              <h3 className="font-serif font-semibold text-base mb-1">Katılımcı</h3>
-              <p className="text-muted-foreground text-sm">160 Katılımcı</p>
+            <Card className="p-2 sm:p-3 text-center">
+              <Users className="h-5 w-5 sm:h-6 sm:w-6 text-primary mx-auto mb-0" />
+              <h3 className="font-serif font-semibold text-sm sm:text-base mb-0">Katılımcı</h3>
+              <p className="text-muted-foreground text-xs sm:text-sm">160 Katılımcı</p>
             </Card>
 
-            <Card className="p-4 text-center">
-              <UserCheck className="h-6 w-6 text-primary mx-auto mb-3" />
-              <h3 className="font-serif font-semibold text-base mb-1">Komite</h3>
-              <p className="text-muted-foreground text-sm">8 Bilim Komitesi</p>
+            <Card className="p-2 sm:p-3 text-center">
+              <Component className="h-5 w-5 sm:h-6 sm:w-6 text-primary mx-auto mb-0" />
+              <h3 className="font-serif font-semibold text-sm sm:text-base mb-0">Komite</h3>
+              <p className="text-muted-foreground text-xs sm:text-sm">8 Bilim Komitesi</p>
             </Card>
           </div>
 
