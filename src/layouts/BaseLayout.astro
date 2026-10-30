@@ -1,0 +1,45 @@
+---
+import "@/styles/global.css"
+
+interface Props {
+  title: string
+  description: string
+  keywords: string[]
+}
+
+const { title, description, keywords } = Astro.props
+const organizer = "Nevzat Ayaz Anadolu Lisesi"
+---
+
+<!doctype html>
+<html lang="tr" class="antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords.join(",")} />
+    <meta name="author" content={organizer} />
+    <meta name="creator" content={organizer} />
+    <meta name="publisher" content={organizer} />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+    <link rel="icon" href="/naalbilim.ico" />
+    <link rel="shortcut icon" href="/naalbilim.ico" />
+    <link rel="apple-touch-icon" href="/naalbilim.ico" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content="Fen Bilimleri Çalıştayı" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body class="font-sans">
+    <slot />
+  </body>
+</html>

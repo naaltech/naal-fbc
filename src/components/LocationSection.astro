@@ -1,0 +1,56 @@
+---
+import Map from "@/components/Map.astro"
+
+// Coordinates for Nevzat Ayaz Anadolu Lisesi, Ümraniye, İstanbul
+const schoolCoordinates: [number, number] = [41.0300516, 29.1028925]
+---
+
+<section class="py-20">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">Lokasyon</h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Çalıştayımız Nevzat Ayaz Anadolu Lisesi'nin yerleşkesinde gerçekleştirilecektir.
+      </p>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-card rounded-lg overflow-hidden shadow-lg">
+        <div class="aspect-video">
+          <Map
+            center={schoolCoordinates}
+            zoom={15}
+            markerPosition={schoolCoordinates}
+            popupText="Nevzat Ayaz Anadolu Lisesi<br/>İnkılap Mah. Yelkenciler Sok. No: 1<br/>Ümraniye, İstanbul"
+          />
+        </div>
+
+        <div class="p-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold mb-3">Adres Detayları</h4>
+              <p class="text-muted-foreground">
+                Nevzat Ayaz Anadolu Lisesi
+                <br />
+                İnkılap Mah. Yelkenciler Sok. No: 1
+                <br />
+                Ümraniye, İstanbul, Türkiye
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-semibold mb-3">Ulaşım</h4>
+              <ul class="text-muted-foreground space-y-1">
+                <li>• Metro: M5 Hattı - Çarşı Durağı</li>
+                <li>Metrobüs hattının Altunizade durağından ve M8 metro hattının Dudullu durağından M5 metro hattına aktarma yapılabilmektedir.</li>
+                <li>• Otobüs: 11P, 131T, 131YS, 320, 522, 14YE, 139A, 11ÜS (Ümraniye Çarşı Metro Durağı)</li>
+                <li>• Otobüs: 11D, 11H, 14DK, 15TY (Ümraniye Telekom Durağı)</li>
+                <li>• Otobüs: 10, 10G, 11K, 11ÇB, 13H, 14K, 20, 20K (Ümraniye Devlet Hastanesi Durağı)</li>                  
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

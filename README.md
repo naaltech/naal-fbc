@@ -7,7 +7,7 @@ A modern, responsive website for Nevzat Ayaz Anadolu Lisesi Science Workshop fea
 
 ## 🚀 Tech Stack
 
-- **Next.js 19** - React framework with App Router
+- **Astro** - Static site framework
 - **TypeScript** - Type safety
 - **Tailwind CSS** - Styling
 - **Leaflet** - Interactive maps
@@ -39,20 +39,17 @@ npm run build
 ## 📁 Project Structure
 
 ```
-app/
-├── page.tsx           # Homepage
-├── komiteler/         # Committees page
-├── layout.tsx         # Root layout
-└── globals.css        # Global styles
-
-components/
-├── ui/               # Tailwind UI components
-├── header.tsx        # Navigation
-├── footer.tsx        # Footer
-├── hero-section.tsx  # Hero section
-├── team-section.tsx  # Team profiles
-├── map.tsx          # Interactive map
-└── ...              # Other sections
+src/
+├── pages/            # index, komiteler, 404
+├── layouts/          # Base HTML layout
+├── data/             # Committee data
+├── styles/           # Global styles
+└── components/
+    ├── ui/           # Tailwind UI components
+    ├── Header.astro  # Navigation
+    ├── Footer.astro  # Footer
+    ├── Map.astro     # Interactive map
+    └── ...           # Other sections
 ```
 
 ## 🌐 Environment Variables
@@ -60,7 +57,7 @@ components/
 Create `.env.local`:
 
 ```bash
-WEB3FORMS_ACCESS_KEY=your_web3forms_key_here
+PUBLIC_WEB3FORMS_ACCESS_KEY=your_web3forms_key_here
 ```
 
 ## 📝 Committees

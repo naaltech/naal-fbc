@@ -1,0 +1,114 @@
+---
+import ClockIcon from "heroicons/24/outline/clock.svg"
+import Card from "@/components/ui/Card.astro"
+
+const schedule = [
+  {
+    day: "11 Mayıs 2024 - 1. Gün",
+    events: [
+      {
+        time: "09.00 - 10.00",
+        title: "Kayıt ve Girişler, Kahvaltı",
+      },
+      {
+        time: "10.00 - 11.00",
+        title: "Açılış Konuşması",
+      },
+      {
+        time: "11.00 - 12.30",
+        title: "1. Oturum",
+      },
+      {
+        time: "12.30 - 14.00",
+        title: "Öğle Yemeği",
+      },
+      {
+        time: "14.00 - 15.30",
+        title: "2. Oturum",
+      },
+      {
+        time: "15.30 - 16.00",
+        title: "Kahve Molası",
+      },
+      {
+        time: "16.00 - 17.30",
+        title: "3. Oturum",
+      },
+      {
+        time: "17.30",
+        title: "Sürpriz Etkinlik",
+      },
+    ],
+  },
+  {
+    day: "12 Mayıs 2024 - 2. Gün",
+    events: [
+      {
+        time: "09.30 - 10.30",
+        title: "Toplanma ve Kahvaltı",
+      },
+      {
+        time: "10.30 - 12.00",
+        title: "4. Oturum",
+      },
+      {
+        time: "12.00 - 12.30",
+        title: "Kahve Molası",
+      },
+      {
+        time: "12.30 - 14.00",
+        title: "5. Oturum",
+      },
+      {
+        time: "14.00 - 15.30",
+        title: "Öğle Yemeği",
+      },
+      {
+        time: "15.30 - 17.00",
+        title: "6. Oturum",
+      },
+      {
+        time: "17.00 - 18.00",
+        title: "Kapanış Konuşması",
+      },
+    ],
+  },
+]
+---
+
+<section id="takvim" class="py-20 bg-card">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">Etkinlik Takvimi</h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        İki gün boyunca sürecek çalıştayımızın detaylı programını inceleyin.
+      </p>
+    </div>
+
+    <div class="max-w-4xl mx-auto space-y-8">
+      {schedule.map((day) => (
+        <div>
+          <h3 class="text-2xl font-serif font-semibold text-foreground mb-6 text-center">{day.day}</h3>
+          <div class="space-y-4">
+            {day.events.map((event) => (
+              <Card class="p-6">
+                <div class="flex flex-col md:flex-row md:items-center gap-4">
+                  <div class="flex items-center gap-2 text-muted-foreground min-w-fit">
+                    <ClockIcon class="h-4 w-4" />
+                    <span class="font-medium">{event.time}</span>
+                  </div>
+
+                  <div class="flex-1">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
+                      <h4 class="font-serif font-semibold text-lg">{event.title}</h4>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

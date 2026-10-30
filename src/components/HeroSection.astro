@@ -1,0 +1,41 @@
+---
+import CalendarIcon from "heroicons/24/outline/calendar.svg"
+import Squares2X2Icon from "heroicons/24/outline/squares-2x2.svg"
+import UsersIcon from "heroicons/24/outline/users.svg"
+import Button from "@/components/ui/Button.astro"
+import Card from "@/components/ui/Card.astro"
+---
+
+<section id="anasayfa" class="py-20 bg-gradient-to-b from-card to-background">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-6xl font-serif font-bold text-foreground mb-6">Nevzat Ayaz Anadolu Lisesi Fen Bilimleri Çalıştayı</h1>
+      <p class="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+        Geleceğin bilim insanları olacak lise öğrencileri, bilimsel araştırma ve proje geliştirme süreçlerini
+        keşfetmek için bir araya geliyor.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 mb-12 max-w-2xl mx-auto">
+        <Card class="p-2 sm:p-3 text-center">
+          <CalendarIcon class="h-5 w-5 sm:h-6 sm:w-6 text-primary mx-auto mb-0" />
+          <h3 class="font-serif font-semibold text-sm sm:text-base mb-0">Tarih</h3>
+          <p class="text-muted-foreground text-xs sm:text-sm">11-12 Mayıs 2024</p>
+        </Card>
+
+        <Card class="p-2 sm:p-3 text-center">
+          <UsersIcon class="h-5 w-5 sm:h-6 sm:w-6 text-primary mx-auto mb-0" />
+          <h3 class="font-serif font-semibold text-sm sm:text-base mb-0">Katılımcı</h3>
+          <p class="text-muted-foreground text-xs sm:text-sm">160 Katılımcı</p>
+        </Card>
+
+        <Card class="p-2 sm:p-3 text-center">
+          <Squares2X2Icon class="h-5 w-5 sm:h-6 sm:w-6 text-primary mx-auto mb-0" />
+          <h3 class="font-serif font-semibold text-sm sm:text-base mb-0">Komite</h3>
+          <p class="text-muted-foreground text-xs sm:text-sm">8 Bilim Komitesi</p>
+        </Card>
+      </div>
+
+      <Button href="#iletisim" size="lg" class="text-lg px-8 py-3">Kayıt Ol</Button>
+    </div>
+  </div>
+</section>

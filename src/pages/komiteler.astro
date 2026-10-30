@@ -1,0 +1,116 @@
+---
+import ChevronDownIcon from "heroicons/24/outline/chevron-down.svg"
+import ChevronUpIcon from "heroicons/24/outline/chevron-up.svg"
+import UsersIcon from "heroicons/24/outline/users.svg"
+import Footer from "@/components/Footer.astro"
+import Header from "@/components/Header.astro"
+import Badge from "@/components/ui/Badge.astro"
+import Button from "@/components/ui/Button.astro"
+import Card from "@/components/ui/Card.astro"
+import { committees } from "@/data/committees"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+---
+
+<BaseLayout
+  title="Komiteler | Nevzat Ayaz Anadolu Lisesi Fen Bilimleri Çalıştayı"
+  description="Fen Bilimleri Çalıştayı komiteleri: Modern Fizik, Ekoloji ve İklim Krizi, Yapay Zeka ve Teknoloji, Astronomi ve Uzay Bilimleri, Biyoteknoloji ve Genetik, Kanser, Psikoloji ve Kimya komiteleri."
+  keywords={["komiteler", "fizik", "ekoloji", "yapay zeka", "astronomi", "biyoteknoloji", "kanser", "psikoloji", "kimya"]}
+>
+  <div class="min-h-screen">
+    <Header />
+
+    <main class="py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h1 class="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">Komitelerimiz</h1>
+          <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Fen Bilimleri Çalıştayımız 8 farklı bilim dalında uzman komitelerden oluşmaktadır. Her komite kendi
+            alanında öncü araştırmaları ve yenilikleri paylaşmaktadır.
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto space-y-6">
+          {committees.map((committee) => (
+            <Card class="overflow-hidden">
+              <details name="komite" class="group">
+                <summary class="flex w-full cursor-pointer list-none items-start gap-4 rounded-md p-6 text-left text-sm font-medium outline-none transition-all hover:bg-muted/50 hover:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 [&::-webkit-details-marker]:hidden">
+                  <div class="min-w-0 flex-1">
+                    <h3 class="text-lg sm:text-xl font-serif font-semibold mb-2 pr-2">{committee.name}</h3>
+                    <p class="text-muted-foreground text-xs sm:text-sm line-clamp-2">
+                      {committee.topics.slice(0, 2).join(", ")} ve daha fazlası...
+                    </p>
+                  </div>
+                  <div class="flex-shrink-0 mt-2">
+                    <ChevronUpIcon class="hidden h-4 w-4 text-muted-foreground group-open:block" />
+                    <ChevronDownIcon class="h-4 w-4 text-muted-foreground group-open:hidden" />
+                  </div>
+                </summary>
+
+                <div class="mt-6 px-6 pb-6 border-t">
+                  <div class="pt-6 space-y-6">
+                    {/* Committee Description */}
+                    <div>
+                      <h4 class="font-semibold mb-3">Komite Hakkında</h4>
+                      <p class="text-muted-foreground leading-relaxed">{committee.description}</p>
+                    </div>
+
+                    {/* Topics */}
+                    <div>
+                      <h4 class="font-semibold mb-3">Konu Alanları</h4>
+                      <div class="flex flex-wrap gap-2">
+                        {committee.topics.map((topic) => (
+                          <Badge>{topic}</Badge>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Speakers */}
+                    <div>
+                      <h4 class="font-semibold mb-4 flex items-center gap-2">
+                        <UsersIcon class="h-4 w-4" />
+                        Uzman Kişiler
+                      </h4>
+                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {committee.speakers.map((speaker) => (
+                          <Card class="p-4">
+                            <div class="flex items-start gap-3">
+                              <img
+                                src={speaker.photo || "/placeholder-user.jpg"}
+                                alt={speaker.name}
+                                loading="lazy"
+                                class="w-12 h-12 flex-shrink-0 rounded-full object-cover"
+                              />
+                              <div class="min-w-0 flex-1">
+                                <h5 class="font-semibold text-sm mb-1">{speaker.name}</h5>
+                                <p class="text-xs text-muted-foreground">{speaker.affiliation}</p>
+                              </div>
+                            </div>
+                          </Card>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </Card>
+          ))}
+        </div>
+
+        {/* Call to Action */}
+        <div class="text-center mt-16">
+          <Card class="p-6 sm:p-8 max-w-2xl mx-auto">
+            <h3 class="text-xl sm:text-2xl font-serif font-semibold mb-4">Komitelere Katılım</h3>
+            <p class="text-muted-foreground mb-6 text-sm sm:text-base">
+              İlgilendiğiniz komitelere katılabilir, eğlenceli aktivitelere dahil olabilir ve uzman kişilerle
+              etkileşimli tartışmalar gerçekleştirebilirsiniz. Bu iki günlük bilimsel keşif yolculuğunda sizleri bekliyoruz!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button href="/#iletisim" size="lg" class="w-full sm:w-auto">Kayıt Ol</Button>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>

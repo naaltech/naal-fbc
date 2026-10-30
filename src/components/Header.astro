@@ -1,0 +1,68 @@
+---
+import Bars3Icon from "heroicons/24/outline/bars-3.svg"
+import XMarkIcon from "heroicons/24/outline/x-mark.svg"
+import Button from "@/components/ui/Button.astro"
+
+const links = [
+  { href: "/", label: "Ana Sayfa" },
+  { href: "/komiteler", label: "Komiteler" },
+  { href: "/#hakkinda", label: "Hakkında" },
+  { href: "/#takvim", label: "Program" },
+  { href: "/#ekip", label: "Ekibimiz" },
+  { href: "/#iletisim", label: "İletişim" },
+]
+---
+
+<header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <div class="flex items-center">
+        <h1 class="text-xl font-serif font-bold text-primary"><a href="/">naalfbç</a></h1>
+      </div>
+
+      {/* Desktop Navigation */}
+      <nav class="hidden md:flex items-center space-x-8">
+        {links.map((link) => (
+          <a href={link.href} class="text-foreground hover:text-primary transition-colors">
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      {/* Mobile menu button */}
+      <Button
+        variant="ghost"
+        size="sm"
+        class="group md:hidden"
+        id="mobile-menu-button"
+        aria-label="Menü"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <Bars3Icon class="h-5 w-5 group-aria-expanded:hidden" />
+        <XMarkIcon class="hidden h-5 w-5 group-aria-expanded:block" />
+      </Button>
+    </div>
+
+    {/* Mobile Navigation */}
+    <div id="mobile-menu" class="md:hidden" hidden>
+      <div class="px-2 pt-2 pb-3 space-y-1 border-t">
+        {links.map((link) => (
+          <a href={link.href} class="block px-3 py-2 text-foreground hover:text-primary transition-colors">
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const button = document.getElementById("mobile-menu-button")!
+  const menu = document.getElementById("mobile-menu")!
+
+  button.addEventListener("click", () => {
+    menu.hidden = !menu.hidden
+    button.setAttribute("aria-expanded", String(!menu.hidden))
+  })
+</script>

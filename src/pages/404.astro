@@ -1,0 +1,21 @@
+---
+import Footer from "@/components/Footer.astro"
+import Header from "@/components/Header.astro"
+import Button from "@/components/ui/Button.astro"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+---
+
+<BaseLayout
+  title="Sayfa Bulunamadı | Nevzat Ayaz Anadolu Lisesi Fen Bilimleri Çalıştayı"
+  description="Aradığınız sayfa bulunamadı."
+  keywords={[]}
+>
+  <div class="min-h-screen flex flex-col">
+    <Header />
+    <main class="flex-1 py-20 text-center">
+      <h1 class="text-4xl font-serif font-bold text-foreground mb-6">Sayfa Bulunamadı</h1>
+      <Button href="/" size="lg">Ana Sayfaya Dön</Button>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>

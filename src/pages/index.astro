@@ -1,0 +1,31 @@
+---
+import AboutSection from "@/components/AboutSection.astro"
+import ContactSection from "@/components/ContactSection.astro"
+import Footer from "@/components/Footer.astro"
+import Header from "@/components/Header.astro"
+import HeroSection from "@/components/HeroSection.astro"
+import LocationSection from "@/components/LocationSection.astro"
+import ScheduleSection from "@/components/ScheduleSection.astro"
+import TeamSection from "@/components/TeamSection.astro"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+---
+
+<BaseLayout
+  title="Fen Bilimleri Çalıştayı | Nevzat Ayaz Anadolu Lisesi"
+  description="Nevzat Ayaz Anadolu Lisesi tarafından düzenlenen Fen Bilimleri Çalıştayı. 8 farklı bilim dalında uzman komiteler, interaktif atölyeler ve öğrenci odaklı bilim etkinlikleri."
+  keywords={["fen bilimleri", "çalıştay", "bilim", "teknoloji", "lise", "öğrenci", "fizik", "kimya", "biyoloji", "astronomi"]}
+>
+  <div class="min-h-screen">
+    <Header />
+    <main>
+      <HeroSection />
+      <AboutSection />
+      <ScheduleSection />
+      <TeamSection />
+      <ContactSection />
+      <LocationSection />
+    </main>
+
+    <Footer />
+  </div>
+</BaseLayout>

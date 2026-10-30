@@ -1,0 +1,63 @@
+---
+import MapPinIcon from "heroicons/24/outline/map-pin.svg"
+
+interface Props {
+  center: [number, number]
+  zoom?: number
+  markerPosition: [number, number]
+  popupText?: string
+}
+
+const { center, zoom = 13, markerPosition, popupText } = Astro.props
+---
+
+<div
+  data-map
+  data-center={JSON.stringify(center)}
+  data-zoom={zoom}
+  data-marker={JSON.stringify(markerPosition)}
+  data-popup={popupText}
+  class="w-full h-full min-h-[300px]"
+>
+  <div class="h-full bg-muted flex items-center justify-center">
+    <div class="text-center">
+      <div class="w-16 h-16 bg-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+        <MapPinIcon class="w-8 h-8 text-primary" />
+      </div>
+      <h3 class="text-lg font-semibold mb-2">Harita yükleniyor...</h3>
+    </div>
+  </div>
+</div>
+
+<script>
+  import type { LatLngTuple } from "leaflet"
+
+  async function initMap(element: HTMLElement) {
+    const [{ default: L }] = await Promise.all([import("leaflet"), import("leaflet/dist/leaflet.css")])
+
+    // Fix for default markers
+    delete (L.Icon.Default.prototype as any)._getIconUrl
+    L.Icon.Default.mergeOptions({
+      iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+      iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+      shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+    })
+
+    const { center, zoom, marker: markerPosition, popup } = element.dataset
+    element.replaceChildren()
+
+    const map = L.map(element).setView(JSON.parse(center!) as LatLngTuple, Number(zoom))
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map)
+
+    const marker = L.marker(JSON.parse(markerPosition!) as LatLngTuple).addTo(map)
+
+    if (popup) {
+      marker.bindPopup(popup)
+    }
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-map]").forEach(initMap)
+</script>
