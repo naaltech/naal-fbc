@@ -11,7 +11,7 @@ A modern, responsive website for Nevzat Ayaz Anadolu Lisesi Science Workshop fea
 - **TypeScript** - Type safety
 - **Tailwind CSS** - Styling
 - **Leaflet** - Interactive maps
-- **shadcn/ui** - UI components
+- **Heroicons** - Icons
 - **Web3Forms** - Contact form handling
 
 ## ✨ Features
@@ -46,7 +46,7 @@ app/
 └── globals.css        # Global styles
 
 components/
-├── ui/               # shadcn/ui components
+├── ui/               # Tailwind UI components
 ├── header.tsx        # Navigation
 ├── footer.tsx        # Footer
 ├── hero-section.tsx  # Hero section
