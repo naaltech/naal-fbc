@@ -1,6 +1,7 @@
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Calendar, Users, Component } from "lucide-react"
+import { CalendarIcon, Squares2X2Icon, UsersIcon } from "@heroicons/react/24/outline"
+import { cn } from "@/lib/utils"
 
 export default function HeroSection() {
   return (
@@ -15,27 +16,27 @@ export default function HeroSection() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 mb-12 max-w-2xl mx-auto">
             <Card className="p-2 sm:p-3 text-center">
-              <Calendar className="h-5 w-5 sm:h-6 sm:w-6 text-primary mx-auto mb-0" />
+              <CalendarIcon className="h-5 w-5 sm:h-6 sm:w-6 text-primary mx-auto mb-0" />
               <h3 className="font-serif font-semibold text-sm sm:text-base mb-0">Tarih</h3>
               <p className="text-muted-foreground text-xs sm:text-sm">11-12 Mayıs 2024</p>
             </Card>
 
             <Card className="p-2 sm:p-3 text-center">
-              <Users className="h-5 w-5 sm:h-6 sm:w-6 text-primary mx-auto mb-0" />
+              <UsersIcon className="h-5 w-5 sm:h-6 sm:w-6 text-primary mx-auto mb-0" />
               <h3 className="font-serif font-semibold text-sm sm:text-base mb-0">Katılımcı</h3>
               <p className="text-muted-foreground text-xs sm:text-sm">160 Katılımcı</p>
             </Card>
 
             <Card className="p-2 sm:p-3 text-center">
-              <Component className="h-5 w-5 sm:h-6 sm:w-6 text-primary mx-auto mb-0" />
+              <Squares2X2Icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary mx-auto mb-0" />
               <h3 className="font-serif font-semibold text-sm sm:text-base mb-0">Komite</h3>
               <p className="text-muted-foreground text-xs sm:text-sm">8 Bilim Komitesi</p>
             </Card>
           </div>
 
-          <Button size="lg" className="text-lg px-8 py-3" asChild>
-            <a href="#iletisim">Kayıt Ol</a>
-          </Button>
+          <a href="#iletisim" className={cn(buttonVariants({ size: "lg" }), "text-lg px-8 py-3")}>
+            Kayıt Ol
+          </a>
         </div>
       </div>
     </section>

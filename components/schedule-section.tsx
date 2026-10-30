@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Clock, MapPin } from "lucide-react"
+import { ClockIcon } from "@heroicons/react/24/outline"
 
 export default function ScheduleSection() {
   const schedule = [
@@ -96,7 +96,7 @@ export default function ScheduleSection() {
                   <Card key={eventIndex} className="p-6">
                     <div className="flex flex-col md:flex-row md:items-center gap-4">
                       <div className="flex items-center gap-2 text-muted-foreground min-w-fit">
-                        <Clock className="h-4 w-4" />
+                        <ClockIcon className="h-4 w-4" />
                         <span className="font-medium">{event.time}</span>
                       </div>
 

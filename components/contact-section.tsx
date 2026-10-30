@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -84,7 +84,7 @@ export default function ContactSection() {
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 text-primary" />
+                    <EnvelopeIcon className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">E-posta</h4>
@@ -94,7 +94,7 @@ export default function ContactSection() {
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 text-primary" />
+                    <PhoneIcon className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Telefon</h4>
@@ -104,7 +104,7 @@ export default function ContactSection() {
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-primary" />
+                    <MapPinIcon className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Adres</h4>

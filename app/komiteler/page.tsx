@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 
-import { ChevronDown, ChevronUp, Users, Calendar } from "lucide-react"
+import { ChevronDownIcon, ChevronUpIcon, UsersIcon } from "@heroicons/react/24/outline"
 
 export default function KomitelerPage() {
   const [activeCommittee, setActiveCommittee] = useState<number | null>(null)
@@ -199,9 +199,9 @@ export default function KomitelerPage() {
                     </div>
                     <div className="flex-shrink-0 mt-2">
                       {activeCommittee === committee.id ? (
-                        <ChevronUp className="h-5 w-5 text-muted-foreground" />
+                        <ChevronUpIcon className="h-5 w-5 text-muted-foreground" />
                       ) : (
-                        <ChevronDown className="h-5 w-5 text-muted-foreground" />
+                        <ChevronDownIcon className="h-5 w-5 text-muted-foreground" />
                       )}
                     </div>
                   </div>
@@ -231,7 +231,7 @@ export default function KomitelerPage() {
                       {/* Speakers */}
                       <div>
                         <h4 className="font-semibold mb-4 flex items-center gap-2">
-                          <Users className="h-4 w-4" />
+                          <UsersIcon className="h-4 w-4" />
                           Uzman Kişiler
                         </h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
